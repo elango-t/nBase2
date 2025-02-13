@@ -35,3 +35,35 @@
 19. ```<sub>,<sup>``` used for super and subscript
 20. ```<time>``` datetime
 21. ```<code>``` used to denote computer code
+
+# Day 2
+1. Absolute url - points to the exact location ,contains protoclols exact
+2. Relative url - points to the location relative to the current file
+3. Document fragments -points to a specific part in a file 
+4. mailto -used along with ```<a>``` to redirect to mail
+## image
+5. image -important to declare width and height because browser loads the html first and the image or video next .As soon as the html is loaded, the browser displays it,leaving no space for the image.when the image is loaded the text moves away ,which creates a distraction to the users who already started reading it.
+## video
+6. video -should have "controls" type src loop muted  poster-thumbnail
+## table
+7. table -scope="col" used to tell the screen readers that the heading is the col heading 
+8. colspan-merges columns
+9. rowsapn -merges rows
+## forms
+10. ```<button> or <input> ``` value set to submit or button
+11. ```<form>``` action defines what to happen when submit button is clicked,method defines the method need to be used for transmission
+12. ```<input>``` name -gives name for the element ,required -boolean attribute
+13. for in label should match with the id in input which are related to each other
+14. ```button``` type=reset,button,submit
+15.  ```<select>``` used for dropdown select option value="option name" option name option
+
+
+
+
+# CSS
+1.    * internal stylesheets
+      * External stylesheets
+      * in line style
+    
+2. h1+p selector works when a h1 taga and a para comes next to next
+3. Attribute selector selects the elements based on its attribure value (EG:a:visited)
