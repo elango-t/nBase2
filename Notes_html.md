@@ -68,14 +68,40 @@
 2. h1+p selector works when a h1 taga and a para comes next to next
 3. Attribute selector selects the elements based on its attribure value (EG:a:visited)
 
-## Day?
-1.    * font -weight:bold -sets bold text
-2.    * text-transform:capitalize
-3.    * text-align:justify -aligns the text 
-4.    * text-shadow: 4px 4px 5px red -horixontal-vertical-blur-color
-5.    * line-height:sets the gap between lines
-6.    * letter-spacing ,word-spacing -brings gap between letters and words
-7.    * font-size:sets the size of the font
-8.    * font-family:sets the font family
-9.    * font-style:italic -sets the font style
+## Day 3
+1. calc() function is used to do simple calculation s inside the css file
+2. transform :rotate(0.8 turn)
+3. class selectors -class =warning mild (class stacking) -accessed as .warning.mild
+4. id unique per page 
+5. Attribute seletor -a[src] targets the attribute value 
+6. pseudoclass selectors -styles based on action and condition
+7. combinators 
+    * descendent combinator - seperated by space - second selector is chosed if its parent is first selector
+    * child selector - seperated by > - only the direct children of the first selector is chosed if it is the second selector
+    * next-sibling selector - elements which are immediate child to the first selector is chosed 
+    * subsequent-sibling selector -no need of immediate occurence
+## Box model -relation between different boxes in the page
+## Outer display types
+8. # block 
+    * new line
+    * the widht and height properties of it are respected
+    * it pushes away all the other elements away 
+    *if width is not specified it takes max-width 100%
+9. # Inline
+    * no new line
+    * widht and height properties do not apply
+    * it pushes other inline element to bepushed away form it 
+
+## Inner display elements
+10. display:flex makes the content inside the box inline   
+11. display :block makes the content inside the box block .
+12. display :inline:block -no new line but width and height are respected
+## conflicting rules
+13. the rules defined at the last is used
+
+
+# Day 3
+## Java script 
+
+
 
