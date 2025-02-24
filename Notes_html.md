@@ -67,3 +67,15 @@
     
 2. h1+p selector works when a h1 taga and a para comes next to next
 3. Attribute selector selects the elements based on its attribure value (EG:a:visited)
+
+## Day?
+1.    * font -weight:bold -sets bold text
+2.    * text-transform:capitalize
+3.    * text-align:justify -aligns the text 
+4.    * text-shadow: 4px 4px 5px red -horixontal-vertical-blur-color
+5.    * line-height:sets the gap between lines
+6.    * letter-spacing ,word-spacing -brings gap between letters and words
+7.    * font-size:sets the size of the font
+8.    * font-family:sets the font family
+9.    * font-style:italic -sets the font style
+
