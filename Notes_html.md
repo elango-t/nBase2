@@ -100,8 +100,19 @@
 13. the rules defined at the last is used
 
 
-# Day 3
-## Java script 
+
+## Day 12
+1.    * font -weight:bold -sets bold text
+2.    * text-transform:capitalize
+3.    * text-align:justify -aligns the text 
+4.    * text-shadow: 4px 4px 5px red -horixontal-vertical-blur-color
+5.    * line-height:sets the gap between lines
+6.    * letter-spacing ,word-spacing -brings gap between letters and words
+7.    * font-size:sets the size of the font
+8.    * font-family:sets the font family
+9.    * font-style:italic -sets the font style
+
+
 
 
 
