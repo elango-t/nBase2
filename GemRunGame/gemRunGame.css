@@ -1,0 +1,47 @@
+#heading {
+    color: #dc9a57;
+    font-size :2vw;
+}
+
+hr {
+    border: 1px solid #dc9a57;
+    width: 100%;
+    height: 1px;
+    box-shadow: 0 0 10px 1px #dc9a57;
+}
+
+#score {
+    font-size: 1.5vw;
+    text-align: right;
+    padding-right: 50px;
+}
+
+.nav {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#cont{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+button{
+    background-color: #dc9a57;
+    border-radius: 5px;
+    padding: 15px;
+}
+button:hover{
+    background-color: #f0c9a5;
+}
+
+.gold,.gem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #dc9a57;
+    padding: 10px;
+    margin: 20px;
+}
