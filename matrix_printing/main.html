@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Matrix Printing</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    </head>
+    <body>
+        <h1>Matrix Printing</h1>
+        <div class="inputs">
+            <input type="number" id="start" class="i" placeholder="Enter start number" name="start" required >
+            <input type="number" id="repeat" class ="i" placeholder="Enter number of repetitions" name="repetitions" required >
+            <div id="skipevent">
+                <label id="skiplabel" for="skip">Want to skip a number  :</label>
+                <button id="skip" onclick="onskip()">Add skip</button>
+            </div>
+            <input id ="skipinput" class="hide" type="number" placeholder="Enter skip number" name="skipNumber" >
+            <input id="rows" type="number" placeholder="Enter number of rows or columns" class="i" required name="rows">
+            <button id="print">Print</button>
+        </div>
+        <div>
+            <table id="matrixTable"></table>
+
+        </div>
+    </body>
+</html>
