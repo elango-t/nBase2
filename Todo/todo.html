@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Todo</title>
+        <link rel="stylesheet" href="todo.css">
+        <script src="todo.js" defer></script>
+    </head>
+    <body>
+        <h1>TODO APP</h1>
+        <div id="contcontainer">
+            <div id="container">
+                <input type="text" id="task" placeholder="Add a new task">
+                <input type="date" id="date">
+                <input type="time" id="time">
+                <button id="add">Add</button>
+            </div>
+            <div id="tablecontainer">
+                <table id="Table" border="1">
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                            <th>Mark as complete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="List">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
