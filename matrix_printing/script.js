@@ -4,28 +4,30 @@ const skip=document.getElementById("skipinput")
 const row=document.getElementById("rows")
 const print=document.getElementById("print")
 const skipbutton=document.getElementById("skip")
+const stop=document.getElementById("stop")
 
 
-skipbutton.addEventListener("click",onskip);
-
+skipbutton.addEventListener("click",function(){
+    onskip;
+});
 function onskip(){
     document.getElementById('skipinput').className="show";
     document.getElementById('skiplabel').style.display="none";
     document.getElementById('skip').style.display="none";
-    // document.querySelector('.inputs').style.visibility="hidden";
 }
 
-
 let arr = [];
+let s,r,sk,rows;
 print.addEventListener("click",async function(){
-    document.querySelector(".inputs").style.display="none";
-    let s=start.value;
-    let r=repeat.value;
-    let sk=skip.value;
-    let rows=row.value;
-    console.log(sk);
-    
-
+    print.style.display="none"
+    s=start.value;
+    r=repeat.value;
+    sk=skip.value;
+    rows=row.value;
+    if(r<0) {
+        alert("Repetitions cannot be negative")
+         return;
+    }
     createTable(rows,rows);
     for (let i = 0; i < rows; i++) {
         arr[i] = [];  
@@ -37,31 +39,26 @@ print.addEventListener("click",async function(){
     let temp=0;
     while (left <= right && top <= bottom) {
         for (let i = bottom; i >= top; i--) {
-           await new Promise((resolve)=>{
-            setTimeout(resolve,1000);
-           }).then(()=>{
+           await wait().then(()=>{
             if(s==sk) s++;
             arr[i][left]=s;
             temp++;
-            if(temp==r){
+            if(temp>=r){
                 s++;
                 temp=0;
             }}
 
         )
            updateTable(rows);
-           
         }
         
         left++;
         for (let i = left; i <= right; i++) {
-            await new Promise((resolve)=>{
-               setTimeout(resolve,1000);
-               }).then(()=>{
+            await wait().then(()=>{
                 if(s==sk) s++;
                 arr[top][i]=s;
                 temp++;
-                if(temp==r){
+                if(temp>=r){
                     s++;
                     temp=0;
                 }}
@@ -74,13 +71,11 @@ print.addEventListener("click",async function(){
     
         if (top <= bottom) {
             for (let i = top; i <= bottom; i++) {
-                await new Promise((resolve)=>{
-                    setTimeout(resolve,1000);
-                   }).then(()=>{
+                await wait().then(()=>{
                     if(s==sk) s++;
                     temp++;
                     arr[i][right]=s
-                    if(temp==r){
+                    if(temp>=r){
                         s++;
                         temp=0;
                     }}
@@ -92,13 +87,11 @@ print.addEventListener("click",async function(){
     
         if (left <= right) {
             for (let i = right; i >= left; i--){ 
-                await new Promise((resolve)=>{
-                    setTimeout(resolve,1000);
-                   }).then(()=>{
+                await wait().then(()=>{
                     if(s==sk) s++;
                     temp++;
                     arr[bottom][i]=s
-                    if(temp==r){
+                    if(temp>=r){
                         s++;
                         temp=0;
                     }}
@@ -110,8 +103,33 @@ print.addEventListener("click",async function(){
     }
 
 }
-
 )
+
+let p = false;
+stop.addEventListener("click",function(){
+    p=!p;
+    stop.textContent=p?"Start":"Stop";
+    if(!p){
+        sk=skip.value
+        r=repeat.value
+    }
+
+})
+function wait() {
+    return new Promise((resolve) => {
+        if (p) {
+            let interval = setInterval(() => {
+                if (!p) {
+                    clearInterval(interval);
+                    setTimeout(resolve, 1000);
+                }
+            }, 100);
+        } else {
+            setTimeout(resolve, 1000);
+        }
+    });
+}
+
 function createTable(rows, cols) {
     let table = document.getElementById("matrixTable");
     table.innerHTML="";
@@ -126,11 +144,9 @@ function createTable(rows, cols) {
 
 function updateTable(rows) {
     let table = document.getElementById("matrixTable");
-    for (let i = 0; i < rows; i++) {
-        for (let j = 0; j <rows; j++) {
+    for (let i=0;i<rows;i++) {
+        for (let j=0;j<rows;j++){
             table.rows[i].cells[j].textContent = arr[i][j];
         }
     }
 }
-
-
