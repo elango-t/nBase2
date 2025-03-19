@@ -7,5 +7,5 @@ export default defineConfig({
     ,
     tailwindcss(),
   ],
-  base: '/nBase2/'
+  base: './',
 })
