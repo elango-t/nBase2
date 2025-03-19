@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Task from "./Task";
 
 
 const App = () => {
@@ -81,7 +82,7 @@ const App = () => {
 
   return (
     <><div className="h-screen overflow-auto">
-      <h1 className="text-5xl font-bold text-center p-15">Todo App</h1>
+      <h1 className="text-5xl font-bold text-center p-15">Todo App</h1>                           
       <div className="flex justify-around items-center flex-col gap-4">
         <div className="p-10 bg-gray-200 border-1 rounded-xl flex justify-around items-center gap-4">
         <input className="p-2 border-2 rounded-2xl text-center hover:bg-gray-400 text-lg font-bold text-gray-700" type="text" value={task} placeholder="Enter task" onChange={(e) => settask(e.target.value)} />
@@ -95,28 +96,8 @@ const App = () => {
             <h1 className="text-5xl font-bold text-center p-15 text-red-400">No tasks</h1>
           ) : (
             tasks.map((task, index) => (
-              <div className="h-fit  bg-gray-100 p-4 rounded-lg shadow-lg flex flex-col items-center space-y-3 w-80 border border-gray-300" key={index}>
-              <h3 className="text-lg font-bold text-gray-900">{task.task}</h3>
-              <h3 className="text-lg font-bold  text-gray-900">{task.Description}</h3>
-              <h3 className="text-lg font-bold text-gray-900">{task.time}</h3>
-              <h3 className={`text-lg font-semibold px-3 py-1 rounded-md ${task.status === "Pending" ? "bg-red-200 text-red-700" : "bg-green-200 text-green-700"}`}>
-                {task.status}
-              </h3>
-              <div className="flex space-x-2">
-                <button 
-                  className="px-3 py-1 bg-green-500 text-white rounded-md shadow hover:bg-green-600 transition"
-                  onClick={() => markAsComplete(index)}
-                >Complete</button>
-                <button 
-                  className="px-3 py-1 bg-blue-500 text-white rounded-md shadow hover:bg-blue-600 transition" onClick={() => editTask(index)}>Edit</button>
-                <button 
-                  className="px-3 py-1 bg-red-500 text-white rounded-md shadow hover:bg-red-600 transition"
-                  onClick={() => deleteTask(index)}
-                >Delete</button>
-              </div>
-            </div>
-            ))
-                      )}
+             <Task task={task} key={index} markAsComplete={markAsComplete} deleteTask={deleteTask} editTask={editTask} index={index} />
+            )))}
                     </div>
                   </div></div>
                 </>
